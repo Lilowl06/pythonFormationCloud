@@ -23,3 +23,25 @@ while userInput != 0 :
     userInput = int(input("Veuillez saisir un chiffre ? "))
 
 print(f"=> La somme des valeurs saisies : {sum(cptSaisi)}, {cptSaisi}")
+
+# Correction avec une boucle while True
+
+def sumNumbers(numbers) :
+    s = 0 # somme
+    for n in numbers :
+        s += n
+    return s
+
+
+values = []
+while True :
+    userInput = int(input("Saisir un chiffre (0 pour quitter le programme) :"))
+    if userInput == 0 :
+        break # sortie de boucle
+    else :
+        values.append(userInput)
+
+# valuesFormatted = str(values).replace("[", "(").replace("]",")")
+valuesFormatted = "(valeurs saisies : " + str(values).strip("[]")+")"
+
+print("Somme des valeurs saisies :", sumNumbers(values), valuesFormatted)

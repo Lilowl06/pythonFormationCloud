@@ -2,12 +2,17 @@
 # utilsation pour des traitements répétitif
 # micro-organisme d'entrée-sortie
 
+import tools
+from tools import separator
+
+''' Fonction placée dans tools
 def separator(charactere, times):
     row = ""
     for n in range(times) :
         row += charactere
     print(row)
-# ca ne renvoie rien et normal car la fooction est défini mais pas utilisée !
+# ca ne renvoie rien et normal car la fonction est défini mais pas utilisée !
+'''
 
 '''
 for n in range(5):
@@ -21,11 +26,13 @@ separator("_",50)
 '''
 
 def hello() :
-    #print("Hello !")
+    # print("Hello !")
     return "Ciao tutti"
 
 result = hello()
 print(result)
+
+tools.separator("*",30)
 
 def square(n):
     return n*n
@@ -36,3 +43,5 @@ numbers = [6,4,40,10,8,15]
 for n in numbers :
     if n <= 10 :
         print(square(n))
+
+separator('*',30)
