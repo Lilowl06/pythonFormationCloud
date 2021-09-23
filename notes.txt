@@ -1,0 +1,15 @@
+Module personnalisé : tools
+Module natif : random, plateform, os
+Module communautaire :
+
+Langage procédural : C 
+Langage orienté objet : Java, C++
+Langage multi-paradigme (procédural et orienté objet) : Python, Javascript, PHP (depuis version 5.3 - orienté objet)
+
+POO => création de classes (catégoriser/classifier les données)
+
+A partir d'une classe => on peut construire des objets
+La classe est un plan de construction (ou moule à gateau).
+Les objets sont des objets construit de la classe.
+
+Exemple la classe Student permettra de construire des étudiants (clone) qui ont tous, un nom, un prénom etc.. et qui pouront subir un examen.

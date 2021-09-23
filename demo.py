@@ -18,9 +18,11 @@ print(os.getcwd())
 # arguments = (path, mode=0o777, *, dir_fd=None)
 # os.mkdir("/home/alyssia/Documents/vsCodeProject/pythonFormationCloud/tmp") # création d'un fichier tmp
 
+'''
 for x in range(5) :
     # os.mkdir("/home/alyssia/Documents/vsCodeProject/pythonFormationCloud/tmp" + str((x+1)))
     os.rmdir("/home/alyssia/Documents/vsCodeProject/pythonFormationCloud/tmp" + str((x+1)))
+'''
 
 # On veut supprimer les dossiers que l'on a créer :
 # os.remove : ne permet de ne supprimer que des fichiers
@@ -33,3 +35,8 @@ import shutil # fait aussi parti du top 4/5 des modules les plus utilisés !
 
 # ou en une ligne
 # import platform, os, shutil
+
+students = ["Sébastien", "Pamela", "Aude"]
+
+lenNames = [len(s) for s in students]
+print(lenNames)

@@ -13,6 +13,7 @@ ex: longueur: 8 => Hn_y9l2%
 print("*** EXO 6 : Générateur de mot de passe ***")
 
 import random
+import string
 
 def makePassWord():
     try :
@@ -23,10 +24,11 @@ def makePassWord():
 
     if lenPassWord > 4 :
         # Liste de différents types de caractères :
-        upperLetters = [chr(index) for index in range(65,91)]
-        lowerLetters = [chr(index) for index in range(97,123)]
-        numbers = [str(i) for i in range(10)]
-        specialCharacters =["!",'"',"#","$","%","&","'","(",")","*","+",",","-",".","/",":",";","<","=",">","?","@","[","]","^","_","{","|","}","~"]
+        upperLetters = [chr(index) for index in range(65,91)] # string.ascii_lowercase
+        lowerLetters = [chr(index) for index in range(97,123)] # string.ascii_uppercase
+        numbers = [str(i) for i in range(10)] # string.digit
+        specialCharacters =["!",'"',"#","$","%","&","'","(",")","*","+",",","-",".","/",":",";","<","=",">","?","@","[","]","^","_","{","|","}","~"] 
+        # string.ascii.punctuation
 
         tmpPassWord = ""
         for i in range(lenPassWord-4):
