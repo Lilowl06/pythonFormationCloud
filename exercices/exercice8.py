@@ -15,9 +15,7 @@ On produira en sortie un fichier de log ('healthCheck.log') qui contiendra :
 print("*** EXO 8: Health Check ***")
 
 # votre code ici
-
 import requests as req
-#from time import strftime
 import datetime
 import time
 
@@ -26,7 +24,7 @@ periodicTime = int(input("Sur quel espace temps, voulez-vous effectuer cette vé
 for i in range(0,numTest):
     while True :
         with open("files/websites.txt", "r") as webSites :
-            lines = webSites.read().splitlines() #liste des sites web entre ''
+            lines = webSites.read().splitlines()
             for site in lines :
                 try :
                     date = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
@@ -39,6 +37,3 @@ for i in range(0,numTest):
         time.sleep(periodicTime)
         print(f"La vérification n°{i+1} a été effectuée.")
         break
-
-#status = str(response.status_code)
-#dateTime = str(datetime.datatime.now())
