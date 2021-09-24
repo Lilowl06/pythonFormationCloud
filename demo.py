@@ -1,4 +1,9 @@
-import platform
+import platform, os
+
+from colorama.ansi import Style
+import tools
+import mypackage.subpackage.subdemo as sd
+from colorama import *
 
 '''
 print(platform.system())
@@ -36,7 +41,29 @@ import shutil # fait aussi parti du top 4/5 des modules les plus utilisés !
 # ou en une ligne
 # import platform, os, shutil
 
+'''
 students = ["Sébastien", "Pamela", "Aude"]
-
 lenNames = [len(s) for s in students]
 print(lenNames)
+'''
+
+
+'''
+sd.subdemoprint() # exécution d'une fonction placée dans un sous-package que nous avons importé et aliasé
+'''
+
+
+'''
+# Utilisation du module colorama afin de changer les couleurs dans l'interpréteur de commande
+print(Fore.LIGHTMAGENTA_EX + "Bravo !")
+print("Bravo, tu es le meilleur")
+print(Style.RESET_ALL) # permet de stopper la coloration des prints
+print(Fore.LIGHTYELLOW_EX + "Bravo !" + Style.RESET_ALL) # pour stopper la coloration directement
+'''
+
+'''
+# On se demande si replace s'arrete à la première occurence trouvée :
+s = "n\n\n<!DOCTYPE html>\n<html lan"
+s2 = s.replace("n", "x").replace("\n","---")
+print(s2)
+'''

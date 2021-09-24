@@ -14,12 +14,13 @@ import csv
 
 with open("files/deniro.csv", "r") as csvFile :
     rows = csv.reader(csvFile, delimiter=",")
-    next(rows, None)
+    next(rows, None) # skip la ligne d'entête
     meilleurScore = 0
     cmpAnnee = 0
+    meilleurFilmTitle = ""
     for r in rows :
-        score = int(r[1].strip().strip("\""))
-        annee = int(r[0].strip().strip("\""))
+        score = int(r[1].strip())
+        annee = int(r[0].strip())
         title = r[2].strip().strip("\"")
         if score > meilleurScore :
             meilleurScore = score

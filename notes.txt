@@ -1,6 +1,14 @@
 Module personnalisé : tools
 Module natif : random, plateform, os
-Module communautaire :
+Module communautaire : module gratuit plus ou moins riche, centralisé sur un hub qui est pypi.org (ce sont des modules créées par diverses personne) == API
+Library ou Module ou bibliothèque sont des synonymes
+    => le hub contient 330 000 projets (projects) qui contiennent plusieurs fichiers (files) qui sont écrit par des utilisateurs (users)
+    et chaque projet à différentes versions (releases).
+    Trendings projects : sont les projets les plus fréquemment téléchargés.
+    Avant de pouvoir importer un module communautaire, il faut l'installer ! --> pip install [nomDuModule] ou uninstall [nomDuModule]
+    pip est un programme a part entière qui est un gestionnaire de packages : pour l'installer sudo apt install python3-pip car sur Linux, il n'est
+    pas inclu dans l'installation de python.
+    On a installer colorama et requests
 
 Langage procédural : C 
 Langage orienté objet : Java, C++
@@ -13,3 +21,42 @@ La classe est un plan de construction (ou moule à gateau).
 Les objets sont des objets construit de la classe.
 
 Exemple la classe Student permettra de construire des étudiants (clone) qui ont tous, un nom, un prénom etc.. et qui pouront subir un examen.
+
+Le protocole HTTP permet la communication clientHTTP(programme)-serveurHTTP(programme) : définit la manière dont deux machines peuvent communiquer entres-elles (protocle 
+de haut niveau, niveau 7). C'est le protocole de base d'internet, le protocole le plus utilisé au monde.
+Le serveurHTTP (programme) est par abu de langage = à serveurWEB.
+Le serveurHTTP le plus connu est apache est peut communiquer avec chrome (clientHTTP) (firefox)
+Le clientHTTP envoie des requetes à un serveurHTTP.
+DevOps : vision d'ensemble, généraliste
+Le protocole HTTP est très simple !
+Un serveur HTTP est un programme qui tourne en boucle infini.
+Logiciel de serveur HTTP (apache) est fait pour recevoir des centaines de milliers de requetes à la demande.
+Avec python on peut lancer des requetes HTTP.
+
+Le HTML est un langage, il ne permet pas de faire des programmes, c'est un langage descriptif et de structuration.
+
+Méthodes HTTP :
+- GET : permet d'indiquer qu'au serveur que l'on souhaie avoir des informations
+- POST : permet d'indiquer au serveur que l'on souhaite lui donner quelque chose.
+- PUT 
+- DELETE 
+
+Methode URL :
+GET https://pypi.org/project/requests
+-> Dans une requete il y a :
+    une URL
+    des méthodes
+    des headers (véhicule de petites informations, de s'identifier)
+    des body : lors d'utilisation de méthode POST
+
+La réponse obtenue aura toujours : 
+    un status code (200 : succès, 404 : not found, etc...)
+    des headers
+    un body
+
+Dans les webdev, il y a les :
+    - Les Front (end) font les interfaces web. Il doit connaitre le HTML, CSS et Javascript (react, angular)
+    - Les Back (end) s'occupent du serveur qui réponds, qui gère les loggins, vérifiacation en base de données, partie sécurité, traitement des réponses,
+    etc... Il doit connaître : Java, PHP, Python, Javascript. Le langage n°1 pour développer des applications est PHP.
+    --> La réunion des deux sont des WebDev Full-Stack.
+
