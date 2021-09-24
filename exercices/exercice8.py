@@ -19,10 +19,12 @@ import requests as req
 import datetime
 import time
 
-numTest = int(input("Combien de fois voulez-vous vérifier la réponse des sites web ? "))
-periodicTime = int(input("Sur quel espace temps, voulez-vous effectuer cette vérification ? "))
-for i in range(0,numTest):
-    while True :
+maxTime = int(input("Durant combien de temps voulez-vous vérifier la réponse des sites web ? (temps en seconde) "))
+periodicTime = int(input("A quelle fréquence voulez-vous effectuer cette vérification ? "))
+totalTime = 0
+cmpCheck = 0
+while True :
+    if totalTime < maxTime :
         with open("files/websites.txt", "r") as webSites :
             lines = webSites.read().splitlines()
             for site in lines :
@@ -33,7 +35,11 @@ for i in range(0,numTest):
                         logFile.write(str(date) + " " + site + " " + "Status code : " + str(response.status_code) + "\n")
                 except :
                     with open("files/healthCheck.log", "a") as logFile :
-                        logFile.write("=> Erreur : pas de réponse du site web" + "\n")
+                        logFile.write(str(date) + " " + site + " " + "Status code : ERREUR, pas de réponse " + "\n")
+        print(f"La vérification n°{cmpCheck+1} a été effectuée, il reste {round((maxTime-totalTime)/60,2)} minutes de vérification")
+        cmpCheck += 1
         time.sleep(periodicTime)
-        print(f"La vérification n°{i+1} a été effectuée.")
+        totalTime += periodicTime
+    else :
+        print(f"Le temps est écoulé. Il y a eu {cmpCheck} vérification.")
         break
