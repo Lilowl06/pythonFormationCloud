@@ -4,6 +4,7 @@ from colorama.ansi import Style
 import tools
 import mypackage.subpackage.subdemo as sd
 from colorama import *
+import time
 
 '''
 print(platform.system())
@@ -67,3 +68,7 @@ s = "n\n\n<!DOCTYPE html>\n<html lan"
 s2 = s.replace("n", "x").replace("\n","---")
 print(s2)
 '''
+
+print("Bon...")
+time.sleep(10)
+print("...jour")
