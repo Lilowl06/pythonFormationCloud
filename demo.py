@@ -5,6 +5,7 @@ import tools
 import mypackage.subpackage.subdemo as sd
 from colorama import *
 import time
+import sys
 
 '''
 print(platform.system())
@@ -69,6 +70,24 @@ s2 = s.replace("n", "x").replace("\n","---")
 print(s2)
 '''
 
+'''
 print("Bon...")
 time.sleep(10)
 print("...jour")
+'''
+
+
+'''print(sys.argv) # argv est une liste d'arguments de la commande inclu
+# python3 demo.py toto tata
+# Cette ligne return avec print(sys.argv) --> ['demo.py', 'toto', 'tata']
+# Ils sont automatiquement mis dans la liste et donc ils sont indexé et récupérable via leurs indexs.
+for a in sys.argv():
+    print(a)'''
+
+while True : #ici pas de sortie de boucle, donc boucle infini. Python print("coucou") ici est un processus enfant du processus Bash qui permet de lancer 
+    # python en ligne de commande
+    print("Coucou")
+    time.sleep(5)
+# je vais chercher dans le top, l'identifiant du programme --> python3 demo (id = 6927) et le kill. Ce qui a pour effet d'arrêter la boucle.
+# Si je ferme la fenêtre bash, donc je tue bash, ca kill la boucle aussi car ca tue les enfants.
+# Tous processus enfant qui continu à vivre quand le parent est mort : on dit qu'il est démonisé (daemon) ou orphelin

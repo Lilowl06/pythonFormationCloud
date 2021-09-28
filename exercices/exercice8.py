@@ -43,3 +43,40 @@ while True :
     else :
         print(f"Le temps est écoulé. Il y a eu {cmpCheck} vérification.")
         break
+
+# Attention, il faut garder le moins de chose possible dans les blocs try et except afin que si une erreur si produise je sache de quoi ca vient. Donc 
+# il faudrait n'avoir que la ligne request dans le try !
+
+'''Correction
+import time, datetime
+import requests
+import sys
+
+startTime = time.time() # donne le temps écoulé depuis janvier 1970. Permet de prendre ca comme un chronomètre, qui calcule le temps depuis 
+le début de la fonction
+logFilePath = "health.log" 
+
+# ToDo : vérifier que les arguments ont été fournis à la commande et qu'ils sont acceptables (convertibles en int)
+sleepTime = int(sys.argv[1])
+maxTime = int(sys.argv[2]) # temps d'éxécution maximale du script # permet de géré les scriptes sans intervention humaine !
+
+with open("websites.txt", "r") as sites :
+    websites = sites.read().splitlines()
+
+while True:
+    logFile = open(logFilePath, "a")
+    for w in websites:
+        newLogLine = ""
+        newLogLine += str(datetime.datetime.now()) + " " + w + " "
+        print(newLogLine)
+        try:
+            response = requests.get(w)
+            newLogLine += str(response.status_code)
+        except:
+            newLogLine += "error when requesting the website"
+        logFile.write(newLogLine + "\n")
+    logFile.close()
+    time.sleep(sleepTime)
+    if time.time() - startTime > maxTime:
+        break
+'''
